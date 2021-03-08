@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup form</title>
+  <link rel="stylesheet" href="signup1hvk.css">
+  
+</head>
+<body>
+    <div id="login_div" class="details">
+      <h1>Login here</h1>
+      <input type="email" placeholder="Your Email" id="email_field"><br>
+      <input type="password" placeholder="Password" id="password_field"><br>
+      <button onclick="login()">LOG IN</button>
+    </div>
+
+    <div id="user_div" class="loggedin">
+      <h3>Already have an account?</h3>
+      <p id="user_para">Click here</p>
+      <button onclick="logout()">LOG OUT</button>
+    </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAD2CfeSU8sOf0t8y8w-qStS3Hg8xjVb34",
+    authDomain: "signup1-b3a29.firebaseapp.com",
+    projectId: "signup1-b3a29",
+    storageBucket: "signup1-b3a29.appspot.com",
+    messagingSenderId: "117891446546",
+    appId: "1:117891446546:web:f30b929526b5ad1dbb65cb",
+    measurementId: "G-HN3WDV6WK0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="signup1hvk.js"></script>
+</body>
+</html>
