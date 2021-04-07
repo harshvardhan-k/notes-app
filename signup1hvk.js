@@ -11,6 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      window.location.href="notesapp.html"
 
     }
 
@@ -30,16 +31,47 @@ function login(){
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
+    //window.location.href="index.html"
+    //window.location.replace("index.html");
     var errorCode = error.code;
     var errorMessage = error.message;
 
     window.alert("Error : " + errorMessage);
-
-    // ...
+   // window.location.href="index.html"
+   
+  
   });
+  
 
 }
-
-function logout(){
-  firebase.auth().signOut();
+function signOut() {
+  // [START auth_sign_out]
+  firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+    window.location.href = "signup1hvk.html";
+  }).catch((error) => {
+    // An error happened.
+  });
+  // [END auth_sign_out]
+  alert("Signed Out");
 }
+
+//function logout(){
+  //firebase.auth().signOut();
+//}
+
+function signin(){
+
+  var email = document.getElementById("email");
+  var password = document.getElementById("password");
+
+  const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+  promise.catch(e => alert(e.message));
+
+  alert("Signed In");
+}
+
+
+
+
+
